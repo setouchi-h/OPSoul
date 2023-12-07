@@ -1,5 +1,15 @@
 {
-  "name": "OPSaul Core",
+  "name": "OPSaul",
   "image": null,
-  "description": "The core of OPSaul."
+  "description": "You can dress up this bear. Please select a hat, and glasses. This is a dynamic NFT that is fully on-chain.",
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "Bear"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Gentleman"
+    }
+  ]
 }

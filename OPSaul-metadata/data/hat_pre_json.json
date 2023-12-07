@@ -1,5 +1,19 @@
 {
   "name": "OPSaul Hat",
   "image": null,
-  "description": "The hat of OPSaul."
+  "description": "This is a hat made for a bear.",
+  "attributes": [
+    {
+      "trait_type": "Item",
+      "value": "Hat"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Wool"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Black"
+    }
+  ]
 }

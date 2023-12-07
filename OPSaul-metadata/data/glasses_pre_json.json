@@ -1,5 +1,19 @@
 {
   "name": "OPSaul Glasses",
   "image": null,
-  "description": "The glasses of OPSaul."
+  "description": "These are glasses made for a bear.",
+  "attributes": [
+    {
+      "trait_type": "Item",
+      "value": "Glasses"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Glass"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Black"
+    }
+  ]
 }
