@@ -1,0 +1,13 @@
+{
+  "name": "opsaul-metadata",
+  "version": "1.0.0",
+  "main": "main.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "@pinata/sdk": "^1",
+    "@types/node": "^20.6.2",
+    "dotenv": "^16.3.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
