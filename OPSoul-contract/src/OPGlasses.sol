@@ -8,11 +8,11 @@ import {AccessControl} from "@openzeppelin/contracts/access/AccessControl.sol";
 contract OPGlasses is ERC721, AccessControl {
     bytes32 internal constant MINTER_ROLE = keccak256("MINTER_ROLE");
     uint256 private s_tokenCounter;
-    string private s_glassesSvgImageUri;
+    string private s_tokenUri;
 
-    constructor(string memory glassesSvgImageUri, address defaultAdmin, address minter) ERC721("OPGlasses", "OPG") {
+    constructor(string memory tokenUri, address defaultAdmin, address minter) ERC721("OPGlasses", "OPG") {
         s_tokenCounter = 1;
-        s_glassesSvgImageUri = glassesSvgImageUri;
+        s_tokenUri = tokenUri;
         _grantRole(DEFAULT_ADMIN_ROLE, defaultAdmin);
         _grantRole(MINTER_ROLE, minter);
     }
@@ -29,24 +29,7 @@ contract OPGlasses is ERC721, AccessControl {
     function tokenURI(uint256 tokenId) public view override returns (string memory) {
         _requireOwned(tokenId);
 
-        return string(
-            abi.encodePacked(
-                _baseURI(),
-                Base64.encode(
-                    bytes(
-                        abi.encodePacked(
-                            '{"name": "',
-                            name(),
-                            " #",
-                            tokenId,
-                            '", "description": "This NFT is a cool glasses, that is 100% on OP mainnet!.", "attributes": [{"trait_type": "Item", "value": "Glasses"}, {"trait_type": "Material", "value": "Glass"}, {"trait_type": "Color", "value": "Black"}], "image": "',
-                            s_glassesSvgImageUri,
-                            '"}'
-                        )
-                    )
-                )
-            )
-        );
+        return s_tokenUri;
     }
 
     function supportsInterface(bytes4 interfaceId) public view override(ERC721, AccessControl) returns (bool) {

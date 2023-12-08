@@ -14,7 +14,7 @@ contract ERC6551Account is IERC165, IERC1271, IERC6551Account, IERC6551Executabl
     error ERC6551Account__MismatchedArrayLength();
 
     uint256 private s_state;
-    mapping(address => mapping(uint256 => bool)) private s_asset;
+    mapping(address => uint256) private s_asset;
 
     receive() external payable {}
 
@@ -42,17 +42,12 @@ contract ERC6551Account is IERC165, IERC1271, IERC6551Account, IERC6551Executabl
         }
     }
 
-    function setAsset(address collection, uint256[] calldata tokenIds, bool[] calldata states) external {
+    function setAsset(address collection, uint256 tokenId) external {
         if (!_isValidSigner(msg.sender)) {
             revert ERC6551Account__InvalidSigner();
         }
-        if (tokenIds.length != states.length) {
-            revert ERC6551Account__MismatchedArrayLength();
-        }
 
-        for (uint256 i = 0; i < tokenIds.length; i++) {
-            s_asset[collection][tokenIds[i]] = states[i];
-        }
+        s_asset[collection] = tokenId;
     }
 
     function isValidSigner(address signer, bytes calldata) external view returns (bytes4) {
@@ -105,7 +100,7 @@ contract ERC6551Account is IERC165, IERC1271, IERC6551Account, IERC6551Executabl
         return s_state;
     }
 
-    function getAsset(address nftAddr, uint256 tokenId) external view returns (bool) {
-        return s_asset[nftAddr][tokenId];
+    function getAsset(address nftAddr) external view returns (uint256) {
+        return s_asset[nftAddr];
     }
 }
