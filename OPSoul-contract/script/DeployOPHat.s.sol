@@ -4,7 +4,7 @@ pragma solidity ^0.8.20;
 import {Script} from "forge-std/Script.sol";
 import {OPHat} from "../src/OPHat.sol";
 
-contract DeployBasicNft is Script {
+contract DeployOPHat is Script {
     string tokenUri = "ipfs://QmWcznipqZyuL4Ua9apznuxKzgokzCMRLBFPQTnARXYKeg";
 
     function run() external returns (address) {
