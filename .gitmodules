@@ -4,3 +4,6 @@
 [submodule "OPSoul-contract/lib/chainlink-brownie-contracts"]
 	path = OPSoul-contract/lib/chainlink-brownie-contracts
 	url = https://github.com/smartcontractkit/chainlink-brownie-contracts
+[submodule "OPSoul-contract/lib/foundry-devops"]
+	path = OPSoul-contract/lib/foundry-devops
+	url = https://github.com/ChainAccelOrg/foundry-devops
