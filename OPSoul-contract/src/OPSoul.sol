@@ -12,30 +12,30 @@ import {ConfirmedOwner} from "@chainlink/contracts/src/v0.8/ConfirmedOwner.sol";
 contract OPSoul is ChainlinkClient, ConfirmedOwner, ERC721, AccessControl {
     error OPSoul__TBANotFound();
 
-    using Chainlink for Chainlink.Request;
+    // using Chainlink for Chainlink.Request;
 
     bytes32 internal constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 private constant SALT = 0;
 
     address private immutable i_erc6551Registry;
     address private immutable i_implementation;
-    // address private immutable i_hatNftAddr;
     address private immutable i_glassesNftAddr;
+    // address private immutable i_hatNftAddr;
 
-    bytes32 private s_jobId;
+    // bytes32 private s_jobId;
+    // uint256 private s_fee;
     uint256 private s_tokenCounter;
-    uint256 private s_fee;
     string private s_bodySvgImageUri;
     string private s_glassesSvgUri;
 
     mapping(uint256 => address) private s_tokenIdToTba;
 
-    event RequestMultipleFulfilled(bytes32 indexed requestId, bytes indexed glasses);
+    // event RequestMultipleFulfilled(bytes32 indexed requestId, bytes indexed glasses);
 
     constructor(
-        address linkAddr,
-        address oracleAddr,
-        bytes32 jobId,
+        // address linkAddr,
+        // address oracleAddr,
+        // bytes32 jobId,
         // address hatNftAddr,
         address glassesNftAddr,
         address erc6551Registry,
@@ -45,10 +45,10 @@ contract OPSoul is ChainlinkClient, ConfirmedOwner, ERC721, AccessControl {
         address defaultAdmin,
         address minter
     ) ConfirmedOwner(msg.sender) ERC721("OPSoul", "OPS") {
-        setChainlinkToken(linkAddr);
-        setChainlinkOracle(oracleAddr);
-        s_fee = (4 * LINK_DIVISIBILITY);
-        s_jobId = jobId;
+        // setChainlinkToken(linkAddr);
+        // setChainlinkOracle(oracleAddr);
+        // s_fee = (4 * LINK_DIVISIBILITY);
+        // s_jobId = jobId;
 
         // i_hatNftAddr = hatNftAddr;
         i_glassesNftAddr = glassesNftAddr;
@@ -218,10 +218,10 @@ contract OPSoul is ChainlinkClient, ConfirmedOwner, ERC721, AccessControl {
         return super.supportsInterface(interfaceId);
     }
 
-    function withdrawLink() external onlyOwner {
-        LinkTokenInterface link = LinkTokenInterface(chainlinkTokenAddress());
-        require(link.transfer(msg.sender, link.balanceOf(address(this))), "Unable to transfer");
-    }
+    // function withdrawLink() external onlyOwner {
+    //     LinkTokenInterface link = LinkTokenInterface(chainlinkTokenAddress());
+    //     require(link.transfer(msg.sender, link.balanceOf(address(this))), "Unable to transfer");
+    // }
 
     function getTba(uint256 tokenId) external view returns (address) {
         return s_tokenIdToTba[tokenId];

@@ -35,7 +35,7 @@ contract SetGlasses is Script {
 
     function run() external {
         address opSoul = 0x858115d4B961419C4195CA5c74d120f60764d3FB;
-        address opGlasses = 0x1A5eDBfB1e43661262b5c33Dcc3887bA45D99791;
+        address opGlasses = 0xB0C4aF27bC604724B9692463E6a6801eCAD61375;
         // the address of tba of the tokenIdOfUser
         address tba = OPSoul(opSoul).getTba(tokenIdOfUser);
 
@@ -58,7 +58,7 @@ contract DeleteGlasses is Script {
 
     function run() external {
         address opSoul = 0x858115d4B961419C4195CA5c74d120f60764d3FB;
-        address opGlasses = 0x1A5eDBfB1e43661262b5c33Dcc3887bA45D99791;
+        address opGlasses = 0xB0C4aF27bC604724B9692463E6a6801eCAD61375;
         // the address of tba of the tokenIdOfUser
         address tba = OPSoul(opSoul).getTba(tokenIdOfUser);
 

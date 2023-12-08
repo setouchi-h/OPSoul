@@ -54,9 +54,9 @@ contract DeployOPSoul is Script {
     ) public returns (address) {
         vm.startBroadcast(msg.sender);
         OPSoul opSoul = new OPSoul(
-            linkAddr,
-            oracleAddr,
-            jobId,
+            // linkAddr,
+            // oracleAddr,
+            // jobId,
             // hatNftAddr,
             glassesNftAddr,
             erc6551Registry,
