@@ -6,10 +6,10 @@ import {Base64} from "@openzeppelin/contracts/utils/Base64.sol";
 import {AccessControl} from "@openzeppelin/contracts/access/AccessControl.sol";
 import {ERC6551Registry} from "./ERC6551Registry.sol";
 import {ERC6551Account} from "./ERC6551Account.sol";
-import {ChainlinkClient, Chainlink, LinkTokenInterface} from "@chainlink/contracts/src/v0.8/ChainlinkClient.sol";
-import {ConfirmedOwner} from "@chainlink/contracts/src/v0.8/ConfirmedOwner.sol";
+// import {ChainlinkClient, Chainlink, LinkTokenInterface} from "@chainlink/contracts/src/v0.8/ChainlinkClient.sol";
+// import {ConfirmedOwner} from "@chainlink/contracts/src/v0.8/ConfirmedOwner.sol";
 
-contract OPSoul is ChainlinkClient, ConfirmedOwner, ERC721, AccessControl {
+contract OPSoul is ERC721, AccessControl {
     error OPSoul__TBANotFound();
 
     // using Chainlink for Chainlink.Request;
@@ -44,7 +44,7 @@ contract OPSoul is ChainlinkClient, ConfirmedOwner, ERC721, AccessControl {
         string memory glassesSvgUri,
         address defaultAdmin,
         address minter
-    ) ConfirmedOwner(msg.sender) ERC721("OPSoul", "OPS") {
+    ) ERC721("OPSoul", "OPS") {
         // setChainlinkToken(linkAddr);
         // setChainlinkOracle(oracleAddr);
         // s_fee = (4 * LINK_DIVISIBILITY);

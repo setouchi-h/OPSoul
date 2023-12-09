@@ -11,7 +11,7 @@ contract SetHat is Script {
     uint256 public tokenIdOfUser = 1;
 
     function run() external {
-        address opSoul = 0x858115d4B961419C4195CA5c74d120f60764d3FB;
+        address opSoul = 0xA40F3bD10fb32D3ABb2307f69727d71C6277522F;
         address opHat = 0x35B9B2B23f01452eab2095d074966F99A1d1aAd0;
         // the address of tba of the tokenIdOfUser
         address tba = OPSoul(opSoul).getTba(tokenIdOfUser);
@@ -31,16 +31,16 @@ contract SetHat is Script {
 
 contract SetGlasses is Script {
     // The token ID of NFT that user owns
-    uint256 public tokenIdOfUser = 1;
+    uint256 public tokenIdOfUser = 2;
 
     function run() external {
         address opSoul = 0x858115d4B961419C4195CA5c74d120f60764d3FB;
-        address opGlasses = 0xB0C4aF27bC604724B9692463E6a6801eCAD61375;
+        address opGlasses = 0x1A5eDBfB1e43661262b5c33Dcc3887bA45D99791;
         // the address of tba of the tokenIdOfUser
         address tba = OPSoul(opSoul).getTba(tokenIdOfUser);
 
         // The token ID of NFT that tba owns
-        uint256 tokenIdOfTBA = 2;
+        uint256 tokenIdOfTBA = 3;
 
         vm.startBroadcast(msg.sender);
         setAsset(tba, opGlasses, tokenIdOfTBA);
@@ -54,11 +54,11 @@ contract SetGlasses is Script {
 
 contract DeleteGlasses is Script {
     // The token ID of NFT that user owns
-    uint256 public tokenIdOfUser = 1;
+    uint256 public tokenIdOfUser = 2;
 
     function run() external {
         address opSoul = 0x858115d4B961419C4195CA5c74d120f60764d3FB;
-        address opGlasses = 0xB0C4aF27bC604724B9692463E6a6801eCAD61375;
+        address opGlasses = 0x1A5eDBfB1e43661262b5c33Dcc3887bA45D99791;
         // the address of tba of the tokenIdOfUser
         address tba = OPSoul(opSoul).getTba(tokenIdOfUser);
 
