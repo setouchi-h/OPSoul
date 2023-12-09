@@ -11,7 +11,7 @@
 
 ## Technology
 
-### structure
+### Structure
 
 ```mermaid
 flowchart TB
@@ -28,6 +28,10 @@ The artwork is completed through the following process
 - Send the glasses NFT to the Token Bound Account (TBA).
 - Change the status of the glasses NFT in the Token Bound Account to 'equipped' or 'de-equipped'.
 - It is possible to change the glasses NFT to different patterns.
+
+### Video
+
+https://youtu.be/11cLotry3M0
 
 ### tool
 
